@@ -1,0 +1,78 @@
+\maketitle
+\section{Metodología}
+
+{\small
+\subsection{\textbf{Selección de la Región de Interés}}
+
+Se seleccionó una región de interés (ROI) en la Región de Atacama, ubicada en la Cordillera de los Andes en Chile. Esta región se sitúa a aproximadamente entre 3.800 y 4.150 metros de altura, abarcando un área total de 800 hectáreas, centrada en las coordenadas geográficas -69.400, -28.139. Este sitio es el lugar donde se realizan las prospecciones del proyecto "Nemesis" de la compañía minera Peñoles.\\
+
+La elección de esta área se justifica en base a varios criterios que garantizan su relevancia y aptitud para los propósitos de este estudio:
+
+\begin{itemize}
+
+    \item \textbf{Cobertura de humedales:} La ROI incorpora todos los humedales que rodean la actividad de prospección, permitiendo un análisis detallado de los posibles impactos de la actividad minera en estos ecosistemas sensibles.
+    
+    \item \textbf{Adecuada extensión:} El tamaño de la región es suficientemente amplio para incluir humedales potencialmente afectados por la actividad minera. Asimismo, la superficie no es excesivamente grande como para incluir variables de otros sectores que podrían introducir ruido en los datos o sesgar los resultados.
+    
+    \item \textbf{Presencia de nieve:} La altitud y las condiciones geográficas de la región garantizan la presencia de nieve durante los meses de invierno, lo que es esencial para analizar las interacciones entre el cambio climático, la cubierta de nieve y la vegetación.
+    
+    \item \textbf{Relevancia histórica:} Dado el tamaño del dataset (imagenes desde 1984), el estudio tiene datos suficientes para analizar, con significancia estadística,  las tendencias históricas en las variables de vegetación y nieve, lo que permite un análisis robusto de los cambios a lo largo del tiempo.
+    
+\end{itemize}
+
+Por tanto, la elección de esta región de interés permite un estudio  de los impactos potenciales de la actividad minera y el cambio climatico en el ecosistema de los humedales de altura y cómo estos impactos pueden interactuar con los cambios en el clima y la cubierta de nieve a lo largo del tiempo.
+}
+
+{\small
+\subsection{\textbf{Recopilación de imágenes Landsat.}}
+Para la adquisición de las imágenes satelitales, se aprovecharon las capacidades de Google Earth Engine (GEE), una plataforma geoespacial basada en la nube que ofrece un vasto repositorio de imágenes satelitales y conjuntos de datos geoespaciales. \\
+
+Se utilizaron las imágenes del satélite Landsat, concretamente Landsat 5 para el período 1984-2011, y Landsat 8 desde 2013 hasta 2022. Cabe señalar que en el año 1987 no se pudo encontrar imágenes apropiadas para el periodo de invierno (imagenes con menos del 20 por ciento de cobertura de nubes) mientras que el  2012 no existió cobertura del área de estudio por una misión Landsat, debido a la transición entre las misiones Landsat 5 y Landsat 8.\\
+
+Las imágenes Landsat presentan una resolución espacial de 30 metros y poseen varias bandas espectrales, que abarcan desde el azul y el verde, hasta el infrarrojo cercano y el infrarrojo de onda corta. Además, contienen una banda térmica con una resolución de 120 metros. Las imágenes Landsat son particularmente útiles para la investigación de la vegetación, ya que las diferentes bandas pueden ser utilizadas para calcular índices de vegetación, como el NDVI (Normalized Difference Vegetation Index).\\
+
+Se desarrolló un algoritmo en Python para conectarse a la API de GEE y automatizar el proceso de recopilación y procesamiento de imágenes satelitales. La ventaja de usar Python en lugar de JavaScript (que se puede usar directamente en la plataforma GEE) radica en la facilidad de integración con otros paquetes y herramientas científicas en Python. Además, Python es ampliamente utilizado en la comunidad científica, lo que facilita la reproducibilidad del estudio y la colaboración con otros investigadores. \\
+
+El algoritmo implementado en Python se encarga de filtrar las imágenes Landsat disponibles en GEE por fecha y ubicación, adecuándose a las necesidades específicas de este estudio. Posteriormente, las imágenes filtradas son descargadas y procesadas, aplicando correcciones atmosféricas y generando índices de vegetación y nieve para cada imagen. Finalmente, se calculan diversas estadísticas descriptivas de las imágenes, que se utilizan posteriormente en el análisis y la interpretación de los resultados.\\
+}
+
+{\small
+\subsection{\textbf{Cálculo de la mediana para la estación de verano y de invierno}}
+Una vez recopiladas y procesadas las imágenes Landsat, se realizó un cálculo crucial para este estudio: la mediana de los valores de los píxeles para cada estación del año, es decir, verano e invierno. Este cálculo se aplicó a todas las bandas espectrales de las imágenes para cada año del período de estudio.\\
+
+Las medianas estacionales se eligieron en lugar de las medianas mensuales por varias razones. En primer lugar, una mediana estacional proporciona un resumen más robusto de la condición de la vegetación y la cobertura de nieve en un período de tiempo más largo. Esto ayuda a minimizar la influencia de eventos extremos y temporales que podrían distorsionar los valores si se considerara un solo mes.\\
+
+En segundo lugar, la variabilidad intrínseca en la vegetación y la nieve a lo largo del año hace que el análisis estacional sea más relevante y representativo que el mensual. Los cambios estacionales en las condiciones climáticas tienen un fuerte impacto en la vegetación y la nieve, y al analizar los datos en una base estacional, se puede capturar mejor esta variabilidad.\\
+
+Para la estación de verano, la mediana de los valores de los píxeles se utilizó para representar la salud y la densidad de la vegetación, calculando el Índice de Vegetación de Diferencia Normalizada (NDVI). Para la estación de invierno, la mediana de los valores de los píxeles se utilizó para calcular el Índice de Nieve (NSI), proporcionando una medida de la cobertura de nieve.\\
+
+El uso de la mediana en lugar de la media también tiene sus ventajas. La mediana es menos sensible a los valores extremos y, por lo tanto, proporciona una mejor medida central en los datos con distribución asimétrica, como a menudo se encuentra en las imágenes de teledetección.\\
+
+En resumen, el cálculo de las medianas estacionales de los valores de los píxeles en todas las bandas espectrales de las imágenes Landsat es una parte esencial de la metodología de este estudio, ya que proporciona una representación robusta y representativa de las condiciones de la vegetación y la nieve en la región de estudio.\\
+}
+
+{\small
+\subsection{\textbf{Desarrollo de imágenes NDVI}}
+Posteriormente, se desarrollaron imágenes del Índice de Vegetación de Diferencia Normalizada (NDVI), una medida comúnmente utilizada para la cantidad y salud de la vegetación en un área. Para cada imagen en la colección, se calculó el NDVI utilizando las bandas roja e infrarroja cercana.\\
+}
+
+{\small
+\subsection{\textbf{Cálculo de la mediana de una ventana de tres años}}
+Con el fin de atenuar las variaciones anuales y resaltar las tendencias a largo plazo, se calculó la mediana del NDVI para una ventana movil de tres años. Esto implicó seleccionar todas las imágenes que se encontraban dentro de una ventana movil de tres años y calcular la mediana de los valores NDVI. En otras palabras los datos que se analizarán posteriormente iran desde el año 1985 al 2021; donde el primer año de la serie, 1985 representa la mediana de los años 1984, 1985 y 1986, y el ultimo año de la serie, 2021 representa la mediana entre los años 2020, 2021 y 2022. \\
+}
+
+
+\input{026_metodologia.tex}
+
+{\small
+\subsection{\textbf{Visualización de las tendencias temporales}}
+Para suavizar las variaciones anuales y resaltar las tendencias a largo plazo, se optó por un enfoque de ventanas de tres años para calcular la mediana del NDVI y el NSI. Este enfoque implicó seleccionar todas las imágenes que se encontraban dentro de cada ventana de tres años y calcular la mediana de los valores de NDVI y NSI.\\
+
+Una ventaja clave de este método es que permite atenuar las fluctuaciones anuales y los posibles eventos extremos que podrían influir en la señal del NDVI y NSI de un año particular. Al promediar a lo largo de tres años, estos eventos extremos y las variaciones anuales se suavizan, lo que permite una visión más clara de las tendencias a largo plazo.\\
+
+Además, las ventanas de tres años ofrecen un equilibrio entre la resolución temporal y la robustez de las tendencias detectadas. Un período más corto podría ser demasiado susceptible a las fluctuaciones anuales, mientras que un período más largo podría diluir demasiado las tendencias y ocultar cambios importantes en el tiempo.\\
+
+Por lo tanto, en este estudio, cada ventana de tres años genera una sola mediana para el NDVI y el NSI, que se utiliza para analizar las tendencias a largo plazo en la vegetación y la cobertura de nieve. Este enfoque de ventana móvil es flexible y puede desplazarse de año en año, proporcionando una visión continua de las tendencias a lo largo del tiempo.\\
+
+Cabe destacar que, aunque se utilizan medianas en lugar de medias, este método sigue siendo válido y robusto. Al igual que antes, la mediana proporciona una medida más estable de la tendencia central, especialmente en presencia de valores extremos o anomalías, que son comunes en las imágenes de teledetección.\\
+}

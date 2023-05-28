@@ -1,0 +1,52 @@
+{\small
+\subsection{Paso 6: Cálculo de las estadísticas y análisis de correlación}
+
+Una vez obtenidas las  medianas de las imágenes NDVI para cada ventana de tres años, se realizaron cálculos de diversas estadísticas para cada imagen. En particular, se calculó el valor medio, la mediana, el valor mínimo, el valor máximo y la desviación estándar.
+
+\subsubsection{Cálculo de estadísticas}
+
+Para cada imagen NDVI, se calcularon las siguientes estadísticas:
+
+\begin{itemize}
+    \item \textbf{Media:} Se calculó la media aritmética de los valores de NDVI en la imagen, utilizando la fórmula:
+    \begin{equation}
+    \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i
+    \end{equation}
+    
+    \item \textbf{Valor mínimo y máximo:} Se identificaron el menor y el mayor valor de NDVI en la imagen, respectivamente.
+    
+    \item \textbf{Desviación estándar:} Se calculó la desviación estándar de los valores de NDVI, utilizando la fórmula:
+    \begin{equation}
+    s = \sqrt{\frac{1}{n-1} \sum_{i=1}^{n} (x_i - \bar{x})^2}
+    \end{equation}
+\end{itemize}
+
+\subsubsection{Correlación entre variables}
+
+Para examinar las relaciones entre las estadísticas calculadas, se realizó un análisis de correlación. En particular, se calculó una matriz de correlación que incluye la correlación de Pearson entre cada par de variables. La correlación de Pearson se calcula de la siguiente manera:
+
+\begin{equation}
+\rho_{xy} = \frac{\sum_{i=1}^{n} (x_i-\bar{x})(y_i-\bar{y})}{\sqrt{\sum_{i=1}^{n} (x_i-\bar{x})^2(y_i-\bar{y})^2}}
+\end{equation}
+
+\subsubsection{Pruebas estadísticas}
+
+Finalmente, se llevaron a cabo pruebas estadísticas para determinar la significancia de las correlaciones observadas. Para cada par de variables, se calculó un valor p utilizando la prueba t de Student. Esta prueba se basa en la hipótesis nula de que no existe correlación entre las dos variables. La estadística de prueba t se calcula de la siguiente manera:
+
+\begin{equation}
+t = \frac{r \sqrt{n-2}}{\sqrt{1-r^2}}
+\end{equation}
+
+donde $r$ es la correlación de Pearson y $n$ es el número de observaciones. El valor p asociado se obtiene al comparar el valor observado de t con una distribución t que tiene $n-2$ grados de libertad.\\
+
+Las pruebas de tendencia son técnicas estadísticas que se utilizan para determinar la existencia de una tendencia o un patrón sistemático en un conjunto de datos a lo largo del tiempo. Estas pruebas son especialmente útiles para series de tiempo, ya que proporcionan una indicación estadística de si los cambios observados en una variable son el resultado de una variación aleatoria o de una tendencia real.\\
+
+Un ejemplo común de prueba de tendencia es la prueba de Mann-Kendall. Esta es una prueba no paramétrica que se utiliza para identificar tendencias en series de tiempo. La prueba de Mann-Kendall es útil porque no requiere que los datos sigan una distribución normal y puede manejar datos con valores faltantes.\\
+
+El resultado de la prueba de Mann-Kendall es un valor de "S" y un valor de p. "S" es una medida de la magnitud de la tendencia, donde un valor de "S" positivo indica una tendencia ascendente y un valor de "S" negativo indica una tendencia descendente. El valor de p es una medida de la significancia estadística de la tendencia. Un valor de p menor a 0.05 generalmente se considera como una indicación de que la tendencia es estadísticamente significativa.\\
+
+Es importante tener en cuenta que, aunque una prueba de tendencias puede indicar la presencia de una tendencia, no proporciona información sobre las causas de esta tendencia. Además, aunque una prueba de tendencias puede proporcionar evidencia de una tendencia estadísticamente significativa, siempre existe la posibilidad de que la tendencia observada sea el resultado de la variabilidad aleatoria.\\
+
+
+
+}
