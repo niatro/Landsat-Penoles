@@ -1,6 +1,6 @@
-PWD g:\My Drive\02_PActivos\230405 BOGADO PENOLES\LaTex
+PWD g:\My Drive\02_PActivos\230405 BOGADO PENOLES\LaTex\Landsat-Penoles
 INPUT C:\Users\Nicolas\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT g:\My Drive\02_PActivos\230405 BOGADO PENOLES\LaTex\000_main.tex
+INPUT g:\My Drive\02_PActivos\230405 BOGADO PENOLES\LaTex\Landsat-Penoles\000_main.tex
 OUTPUT 000_main.log
 INPUT C:\Users\Nicolas\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Users\Nicolas\AppData\Local\Programs\MiKTeX\tex\latex\base\article.cls

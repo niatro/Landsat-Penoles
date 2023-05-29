@@ -1,12 +1,12 @@
 # Fdb version 4
-["pdflatex"] 1685205410 "g:/My Drive/02_PActivos/230405 BOGADO PENOLES/LaTex/000_main.tex" "000_main.pdf" "000_main" 1685205412 0
-  "000_main.aux" 1685205412 3802 1afc5ce96e2ecde7b20720df05750cc5 "pdflatex"
+["pdflatex"] 1685364643 "g:/My Drive/02_PActivos/230405 BOGADO PENOLES/LaTex/Landsat-Penoles/000_main.tex" "000_main.pdf" "000_main" 1685364646 0
+  "000_main.aux" 1685364645 3802 3777393318867b24b119d443d7eb8c7d "pdflatex"
   "000_main.tex" 1685123326 598 3a0d013b87a07fc046a79cf87bb74b45 ""
-  "010_introduccion.tex" 1685201579 2987 2df677c0039d8e5ab49cd2bed8bb4b08 ""
+  "010_introduccion.tex" 1685364643 2973 85844c37733002ca3a099e4497871256 ""
   "020_metodologia.tex" 1685205407 9710 c03e32b7c8d533659ccab2d7e4b2e420 ""
   "026_metodologia.tex" 1685205407 3905 cb79009c4c95d4e7d4d423765547b15a ""
   "030_resultados.tex" 1685122089 14434 99ff05e12b143347e8f3533ebd7e590c ""
-  "040_conclusiones.tex" 1685199160 6773 5ec15871e4370dededa296080910f055 ""
+  "040_conclusiones.tex" 1685289392 14011 f2566d7a8b93016a091ef16d0c20640a ""
   "050_bibliografia.tex" 1685123090 526 610691536550c741c64492effa5420ff ""
   "080_tabla_img_landsat.tex" 1685119783 6308 f824d7b5e81ffe24f52fc4cb0fad56ff ""
   "081_tabla_valores.tex" 1685116805 4437 e09e2acea81ddc9b7a4e24f16b3bd0c4 ""
@@ -95,7 +95,7 @@
   "C:/Users/Nicolas/AppData/Local/Programs/MiKTeX/tex/latex/tools/longtable.sty" 1667238666 12892 af5f5e872a6e322f3e5ba2c881288a56 ""
   "C:/Users/Nicolas/AppData/Local/Programs/MiKTeX/tex/latex/tools/tabularx.sty" 1667238666 7147 be6981d9f5d866a5634048c4a11814a9 ""
   "C:/Users/Nicolas/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388486852 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
-  "g:/My Drive/02_PActivos/230405 BOGADO PENOLES/LaTex/000_main.tex" 1685123326 598 3a0d013b87a07fc046a79cf87bb74b45 ""
+  "g:/My Drive/02_PActivos/230405 BOGADO PENOLES/LaTex/Landsat-Penoles/000_main.tex" 1685123326 598 3a0d013b87a07fc046a79cf87bb74b45 ""
   "img_sat/NDVI_1985.png" 1684956379 16606 0e31624f3b17e1b0a17de78e10fd8e16 ""
   "img_sat/NDVI_1986.png" 1684956408 16714 0ebdca4b96c46218ee342472394e7e51 ""
   "img_sat/NDVI_1988.png" 1684957642 17600 56064867e6e773cfe81d1791c1a2837f ""
